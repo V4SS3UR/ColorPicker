@@ -41,7 +41,7 @@ Effortlessly create and navigate through different projects, each with its own s
 
 ## Getting Started
 
-To begin using ColorPicker, simply [download](https://github.com/V4SS3UR/ColorPicker/releases/download/0.1/ColorPicker_v0.1.zip) the latest release and follow the installation instructions in the documentation.
+To begin using ColorPicker, simply [download](https://github.com/V4SS3UR/ColorPicker/releases/download/v1.0/ColorPicker.v1.0.zip) the latest release and follow the installation instructions in the documentation.
 
 ## Contributing
 
