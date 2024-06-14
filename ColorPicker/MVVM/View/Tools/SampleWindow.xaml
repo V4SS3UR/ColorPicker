@@ -1,0 +1,60 @@
+﻿<Window x:Class="ColorPicker.MVVM.View.SampleWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fade="clr-namespace:VsrFade.Controls;assembly=VsrFade"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="CanResizeWithGrip"
+        AllowsTransparency="True"
+        Background="Transparent"
+        Title="Picker"
+        Height="100"
+        Width="100"
+        Topmost="True"
+        ShowInTaskbar="False"
+        x:Name="Sample">
+
+    <Window.Resources>
+        <Style TargetType="Path">
+            <Setter Property="Stretch" Value="Uniform" />
+            <Setter Property="Fill" Value="#5FFF" />
+            <Setter Property="Height" Value="20" />
+            <Setter Property="Width" Value="20" />
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Border Background="#01000000" CornerRadius="10" />
+
+        <Border Background="{Binding ElementName=Sample, Path=ColorObject.SolidColorBrush}"
+            d:Background="LightGray"
+            CornerRadius="10">
+
+            <DockPanel VerticalAlignment="Top" HorizontalAlignment="Right">
+                <DockPanel DockPanel.Dock="Top">
+                    <fade:FadeButton DockPanel.Dock="Right" x:Name="CloseButton" CornerRadius="5"
+                         Background="Transparent" FocusedBackground="Red" Click="CloseButton_Click" Margin="3">
+                        <Path Data="{StaticResource Close}" />
+                    </fade:FadeButton>
+                    <fade:FadeButton DockPanel.Dock="Right" x:Name="EditButton" CornerRadius="5"
+                         Background="Transparent" FocusedBackground="#5FFF" Click="EditButton_Click"  Margin="3">
+                        <Path Data="{StaticResource Pen}" />
+                    </fade:FadeButton>
+                </DockPanel>
+                <DockPanel DockPanel.Dock="Top">
+                    <fade:FadeButton DockPanel.Dock="Right" x:Name="UpButton" CornerRadius="5"
+                         Background="Transparent" FocusedBackground="#5FFF" Click="UpButton_Click"  Margin="3">
+                        <Path Data="{StaticResource Up}" />
+                    </fade:FadeButton>
+
+                    <fade:FadeButton DockPanel.Dock="Right" x:Name="DownButton" CornerRadius="5"
+                         Background="Transparent" FocusedBackground="#5FFF" Click="DownButton_Click"  Margin="3">
+                        <Path Data="{StaticResource Down}" Stretch="Uniform" Height="20" Fill="#5FFF" />
+                    </fade:FadeButton>
+                </DockPanel>
+            </DockPanel>
+        </Border>
+    </Grid>
+</Window>
